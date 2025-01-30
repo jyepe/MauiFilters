@@ -21,6 +21,7 @@
     		builder.Logging.AddDebug();
 #endif
 
+            //builder.Services.AddSingleton<MauiFilterViewModel>();
             return builder.Build();
         }
     }

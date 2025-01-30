@@ -2,7 +2,124 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiFilters.Views.MauiFiltersView"
+             xmlns:local="clr-namespace:MauiFilters.Views.CustomViews"
+             xmlns:viewModel="clr-namespace:MauiFilters.ModelView"
+             xmlns:extensions="clr-namespace:MAUIFiltersTests.Extensions"
+             x:DataType="viewModel:MauiFilterViewModel"
              Title="MauiFiltersView">
-    
 
+    <Grid RowDefinitions="*,*">
+
+        <Image Source="{Binding ImageSource}"
+               Aspect="AspectFill">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TakePhotoCommand}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Grid x:Name="Overlay"
+              Opacity="0.6">
+
+        </Grid>
+
+        <Grid Grid.Row="1"
+              BackgroundColor="Black"
+              RowDefinitions="*,*,*"
+              ColumnDefinitions="*,*,*">
+
+            <!--row 1-->
+            <local:GradientView GradientName="Blu Gradient"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FillColors="{extensions:Gradients ColorsList='#FF0000,#0000FE', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Yellow Gradient"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FillColors="{extensions:Gradients ColorsList='#F6FF00,#077D18', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Red Gradient"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FillColors="{extensions:Gradients ColorsList='#FF0000,#FFFFFF', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <!--row 2-->
+            <local:GradientView GradientName="Purple Gradient"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                FillColors="{extensions:Gradients ColorsList='#810880,#0B0881', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Green Gradient"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FillColors="{extensions:Gradients ColorsList='#088130,#6F3A01', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Black Gradient"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FillColors="{extensions:Gradients ColorsList='#000000,#FFFFFF', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <!--row 3-->
+            <local:GradientView GradientName="Orange Gradient"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                FillColors="{extensions:Gradients ColorsList='#FBB100,#12FB00', Direction=l}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Indigo Gradient"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                FillColors="{extensions:Gradients ColorsList='#4513AC,#A500FB', Direction=u}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+
+            <local:GradientView GradientName="Royal Gradient"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                FillColors="{extensions:Gradients ColorsList='#4513AC,#A500FB,#1C39EB,#00A4F9,#00EAF9', Direction=r}">
+
+                <local:GradientView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </local:GradientView.GestureRecognizers>
+            </local:GradientView>
+        </Grid>
+    </Grid>
 </ContentPage>
